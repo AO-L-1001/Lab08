@@ -19,7 +19,10 @@ public class CustomList {
 
 
 
-    public int countCities() { throw new UnsupportedOperationException(); }
+    public int countCities() {
+        return cities.size();
+    }
+
     public void deleteCity(City city) {
         if (city == null) throw new IllegalArgumentException("city is null");
         boolean removed = cities.remove(city);
