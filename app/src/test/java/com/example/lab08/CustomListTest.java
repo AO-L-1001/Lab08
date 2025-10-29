@@ -22,4 +22,23 @@ public class CustomListTest {
 
         assertFalse(list.hasCity(edmonton));
     }
+    @Test
+    public void testDeleteCity_removesExisting() {
+        CustomList list = new CustomList();
+        City redDeer = new City("Red Deer", "AB");
+        list.addCity(redDeer);
+
+        list.deleteCity(redDeer);
+
+        assertFalse(list.hasCity(redDeer));
+    }
+
+    @Test
+    public void testDeleteCity_throwsWhenMissing() {
+        CustomList list = new CustomList();
+        City missing = new City("Lethbridge", "AB");
+
+        assertThrows(IllegalArgumentException.class, () -> list.deleteCity(missing));
+    }
+
 }
