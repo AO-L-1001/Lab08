@@ -20,13 +20,13 @@ public class CustomList {
 
 
     public int countCities() { throw new UnsupportedOperationException(); }
-//    public void deleteCity(City city) {
-//        if (city == null) throw new IllegalArgumentException("city is null");
-//        boolean removed = cities.remove(city);
-//        if (!removed) {
-//            // 规格约定：删除不存在城市时报错（也与以往 Lab 风格一致）
-//            throw new IllegalArgumentException("city not in list");
-//        }
+    public void deleteCity(City city) {
+        if (city == null) throw new IllegalArgumentException("city is null");
+        boolean removed = cities.remove(city);
+        if (!removed) {
+            // 规格约定：删除不存在城市时报错（也与以往 Lab 风格一致）
+            throw new IllegalArgumentException("city not in list");
+        }
     }
 
 
