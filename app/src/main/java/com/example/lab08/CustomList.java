@@ -4,18 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomList {
-    private List<City> cities;
-
-    public CustomList() {
-        this.cities = new ArrayList<>();
-    }
+    private final List<City> cities = new ArrayList<>();
 
     public void addCity(City city) {
+        if (city == null) throw new IllegalArgumentException("city is null");
         cities.add(city);
     }
 
-    
+    // --- 目标 1：hasCity ---
+    public boolean hasCity(City city) {
 
-    // Will be implemented later using TDD (leave blank for now)
-    // public boolean hasCity(City city) { ... }
+        return cities.contains(city);
+    }
+
+
+    public void deleteCity(City city) { throw new UnsupportedOperationException(); }
+    public int countCities() { throw new UnsupportedOperationException(); }
 }
